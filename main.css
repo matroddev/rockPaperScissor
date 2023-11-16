@@ -26,21 +26,6 @@ svg {
   font-size: 10rem;
 }
 
-@media screen and (min-width: 800px) {
-	main {
-		flex-direction: row;
-	}
-
-	.player1-side {
-		width: 50%;
-		height: calc(100vh - 7vh);
-	}
-
-	.player2-side {
-		width: 50%;
-		height: calc(100vh - 7vh);
-	}
-}
 
 /* id styles */
 
@@ -80,8 +65,16 @@ svg {
   background: black;
   height: 7vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
+}
+
+.player1-score, .player2-score {
+	color: white;
+	border-radius: 5px;
+	text-align: center;
+	padding: 0.25rem 0.75rem;
+	font-size: 1.5rem;
 }
 
 .game-title {
@@ -94,10 +87,26 @@ svg {
   justify-content: center;
   align-items: center;
   background: black;
-  height: 50%;
+  height: 100%;
+}
+
+.player2-side {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 100%;
 }
 
 .game-start {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.game-reset {
+	display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -122,10 +131,20 @@ svg {
   color: black;
 }
 
-.player2-side {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  height: 50%;
+@media screen and (min-width: 800px) {
+	main {
+		flex-direction: row;
+	}
+
+	.player1-side {
+		width: 50%;
+	}
+
+	.player2-side {
+		width: 50%;
+	}
+
+	.game-title {
+		font-size: 2.25rem;
+	}
 }
