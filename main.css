@@ -1,0 +1,44 @@
+/* fonts */
+
+/* cheap reset */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* global styles */
+
+body {
+	background: purple;
+}
+
+svg {
+	font-size: 10rem;
+}
+
+/* id styles */
+
+#rock {
+	transform: rotate(90deg);
+	fill: white;
+}
+
+#rock2 {
+	transform: rotate(90deg) rotateX(180deg);
+}
+
+#paper {
+	transform: rotate(90deg);
+	fill: white;
+}
+
+#paper2 {
+	transform: rotate(90deg) rotateX(180deg);
+}
+
+#scissor {
+	transform: rotateY(180deg);
+	fill: white;
+}
