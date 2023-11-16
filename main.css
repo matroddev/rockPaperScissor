@@ -14,6 +14,10 @@ body {
 	background: purple;
 }
 
+main {
+	display: flex;
+}
+
 svg {
 	font-size: 10rem;
 }
@@ -55,3 +59,12 @@ svg {
 	text-align: center;
 	padding: 1rem;
 }
+
+.player1-side {
+	background: black;
+}
+
+.player2-side {
+	background: white;
+}
+
