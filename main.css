@@ -98,6 +98,10 @@ svg {
   height: 100%;
 }
 
+.playing {
+	animation: playing 0.5s 3;
+}
+
 .game-start {
   position: absolute;
   top: 50%;
@@ -146,5 +150,19 @@ svg {
 
 	.game-title {
 		font-size: 2.25rem;
+	}
+}
+
+@keyframes playing {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(20px);
+	}
+
+	100% {
+		transform: translateY(0);
 	}
 }
