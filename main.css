@@ -19,67 +19,38 @@ main {
   position: relative;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 7vh);
+  height: calc(100vh - 8vh);
 }
 
-svg {
-  font-size: 10rem;
+img {
+  display: block;
+  width: 100%;
 }
-
 
 /* id styles */
-
-#rock {
-  transform: rotate(90deg);
-  fill: white;
-}
-
-#rock2 {
-  transform: rotate(90deg) rotateX(180deg);
-}
-
-#paper {
-  transform: rotate(90deg);
-  fill: white;
-  display: none;
-}
-
-#paper2 {
-  transform: rotate(90deg) rotateX(180deg);
-  display: none;
-}
-
-#scissor {
-  transform: rotateY(180deg);
-  fill: white;
-  display: none;
-}
-
-#scissor2 {
-  display: none;
-}
 
 /* class styles */
 
 .header {
   background: black;
-  height: 7vh;
+  min-height: 8vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
-.player1-score, .player2-score {
-	color: white;
-	border-radius: 5px;
-	text-align: center;
-	padding: 0.25rem 0.75rem;
-	font-size: 1.5rem;
+.player1-score,
+.player2-score {
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.25rem 0.75rem;
+  font-size: 1.5rem;
 }
 
 .game-title {
   color: white;
-	font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 .player1-side {
@@ -98,8 +69,13 @@ svg {
   height: 100%;
 }
 
+.player1-throw,
+.player2-throw {
+  width: 160px;
+}
+
 .playing {
-	animation: playing 0.5s 3;
+  animation: playing 0.5s 3;
 }
 
 .game-start {
@@ -110,7 +86,7 @@ svg {
 }
 
 .game-reset {
-	display: none;
+  display: none;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -136,33 +112,38 @@ svg {
 }
 
 @media screen and (min-width: 800px) {
-	main {
-		flex-direction: row;
-	}
+  main {
+    flex-direction: row;
+  }
 
-	.player1-side {
-		width: 50%;
-	}
+  .player1-side {
+    width: 50%;
+  }
 
-	.player2-side {
-		width: 50%;
-	}
+  .player2-side {
+    width: 50%;
+  }
 
-	.game-title {
-		font-size: 2.25rem;
-	}
+  .game-title {
+    font-size: 2.25rem;
+  }
+
+  .player1-throw,
+  .player2-throw {
+    width: 200px;
+  }
 }
 
 @keyframes playing {
-	0% {
-		transform: translateY(0);
-	}
+  0% {
+    transform: translateY(0);
+  }
 
-	50% {
-		transform: translateY(20px);
-	}
+  50% {
+    transform: translateY(20px);
+  }
 
-	100% {
-		transform: translateY(0);
-	}
+  100% {
+    transform: translateY(0);
+  }
 }
