@@ -66,11 +66,17 @@ svg {
 }
 
 .player1-side {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: black;
 	height: 50%;
 }
 
 .player2-side {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	background: white;
 	height: 50%;
 }
