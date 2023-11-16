@@ -3,114 +3,129 @@
 /* cheap reset */
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* global styles */
 
 body {
-	background: purple;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 main {
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	height: calc(100vh - 7vh);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 7vh);
 }
 
 svg {
-	font-size: 10rem;
+  font-size: 10rem;
+}
+
+@media screen and (min-width: 800px) {
+	main {
+		flex-direction: row;
+	}
+
+	.player1-side {
+		width: 50%;
+		height: calc(100vh - 7vh);
+	}
+
+	.player2-side {
+		width: 50%;
+		height: calc(100vh - 7vh);
+	}
 }
 
 /* id styles */
 
 #rock {
-	transform: rotate(90deg);
-	fill: white;
+  transform: rotate(90deg);
+  fill: white;
 }
 
 #rock2 {
-	transform: rotate(90deg) rotateX(180deg);
+  transform: rotate(90deg) rotateX(180deg);
 }
 
 #paper {
-	transform: rotate(90deg);
-	fill: white;
-	display: none;
+  transform: rotate(90deg);
+  fill: white;
+  display: none;
 }
 
 #paper2 {
-	transform: rotate(90deg) rotateX(180deg);
-	display: none;
+  transform: rotate(90deg) rotateX(180deg);
+  display: none;
 }
 
 #scissor {
-	transform: rotateY(180deg);
-	fill: white;
-	display: none;
+  transform: rotateY(180deg);
+  fill: white;
+  display: none;
 }
 
 #scissor2 {
-	display: none;
+  display: none;
 }
 
 /* class styles */
 
 .header {
-	background: black;
-	height: 7vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background: black;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .game-title {
-	color: white;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  color: white;
+	font-size: 1.75rem;
 }
 
 .player1-side {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: black;
-	height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  height: 50%;
 }
 
 .game-start {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .start-game {
-	background: black;
-	color: white;
-	padding: 1rem 2rem;
-	text-transform: uppercase;
-	font-size: 2rem;
-	border: 3px solid white;
-	border-radius: 10px;
-	cursor: pointer;
-	transition: all 0.3s ease-in;
+  background: black;
+  color: white;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-size: 2rem;
+  border: 3px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
 }
 
 .start-game:hover {
-	background: white;
-	border: 3px solid black;
-	color: black;
+  background: white;
+  border: 3px solid black;
+  color: black;
 }
 
 .player2-side {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: white;
-	height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  height: 50%;
 }
-
