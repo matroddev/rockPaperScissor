@@ -38,15 +38,22 @@ svg {
 #paper {
 	transform: rotate(90deg);
 	fill: white;
+	display: none;
 }
 
 #paper2 {
 	transform: rotate(90deg) rotateX(180deg);
+	display: none;
 }
 
 #scissor {
 	transform: rotateY(180deg);
 	fill: white;
+	display: none;
+}
+
+#scissor2 {
+	display: none;
 }
 
 /* class styles */
