@@ -12,39 +12,58 @@ const player2Moves = [
   './assets/blackScissor.png',
 ]
 
+const wRock = player1Moves[0]
+const wPaper = player1Moves[1]
+const wScissor = player1Moves[2]
+
+const bRock = player2Moves[0]
+const bPaper = player2Moves[1]
+const bScissor = player2Moves[2]
+
 const gameStartBtn = document.querySelector('.game-start')
 const gameResettBtn = document.querySelector('.game-reset')
-const playerOneScore = document.querySelector('.p1-score')
-const playerTwoScore = document.querySelector('.p2-score')
 const playerOneThrow = document.querySelector('.player1-throw')
 const playerTwoThrow = document.querySelector('.player2-throw')
 const playerOneMove = document.querySelector('.player1-throw__move')
 const playerTwoMove = document.querySelector('.player2-throw__move')
+const winner = document.querySelector('.game-title')
 
 const gamePlay = function () {
-  let p1Score = 0
-  let p2Score = 0
   playerOneThrow.classList.add('playing')
   playerTwoThrow.classList.add('playing')
   setTimeout(function () {
-    let oneLastMove = (playerOneMove.src =
+    let p1Move = (playerOneMove.src =
       player1Moves[Math.floor(Math.random() * 3)])
-    let twoLastMove = (playerTwoMove.src =
+    let p2Move = (playerTwoMove.src =
       player2Moves[Math.floor(Math.random() * 3)])
-    console.log(oneLastMove)
-    console.log(twoLastMove)
-		p1Score++
-		playerOneScore.textContent = p1Score
+    if (p1Move === wRock && p2Move === bScissor) {
+      winner.textContent = 'Player One Wins!'
+    } else if (p1Move === wRock && p2Move === bPaper) {
+      winner.textContent = 'Player Two Wins!'
+    } else if (p1Move === wPaper && p2Move === bScissor) {
+      winner.textContent = 'Player Two Wins!'
+    } else if (p1Move === wPaper && p2Move === bRock) {
+      winner.textContent = 'Player One Wins!'
+    } else if (p2Move === bRock && p1Move === wScissor) {
+      winner.textContent = 'Player Two Wins!'
+    } else if (p2Move === bPaper && p1Move === wScissor) {
+      winner.textContent = 'Player Two Wins!'
+    } else if (p1Move === wRock && p2Move === bScissor) {
+      winner.textContent = 'Player One Wins!'
+    } else {
+      winner.textContent = 'It is a Draw!'
+    }
   }, 1500)
 }
-
 const gameReady = function () {
   playerOneThrow.classList.remove('playing')
   playerTwoThrow.classList.remove('playing')
-  console.log(`playing class is gone`)
+  playerOneMove.src = player1Moves[0]
+  playerTwoMove.src = player2Moves[0]
+  winner.textContent = 'Rock Paper Scissors'
 }
 
 gameStartBtn.addEventListener('click', () => {
   gamePlay()
-  // setTimeout(gameReady, 2500)
+  setTimeout(gameReady, 5000)
 })
