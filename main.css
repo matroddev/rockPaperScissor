@@ -84,7 +84,17 @@ img {
   transform: translate(-50%, -50%);
 }
 
-.start-game {
+.visible {
+	display: block;
+}
+
+.invisible {
+	display: none;
+}
+
+
+
+.start-game, .reset-game {
   background: black;
   color: white;
   padding: 1rem 2rem;
@@ -96,7 +106,7 @@ img {
   transition: all 0.3s ease-in;
 }
 
-.start-game:hover {
+.start-game:hover, .reset-game:hover {
   background: white;
   border: 3px solid black;
   color: black;
