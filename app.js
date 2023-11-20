@@ -47,12 +47,14 @@ const gamePlay = function () {
     } else if (p2Move === bRock && p1Move === wScissor) {
       winner.textContent = 'Player Two Wins!'
     } else if (p2Move === bPaper && p1Move === wScissor) {
-      winner.textContent = 'Player Two Wins!'
+      winner.textContent = 'Player One Wins!'
     } else if (p1Move === wRock && p2Move === bScissor) {
       winner.textContent = 'Player One Wins!'
     } else {
       winner.textContent = 'It is a Draw!'
     }
+		gameResettBtn.classList.add('visible')
+		gameStartBtn.classList.add('invisible')
   }, 1500)
 }
 const gameReady = function () {
@@ -65,5 +67,10 @@ const gameReady = function () {
 
 gameStartBtn.addEventListener('click', () => {
   gamePlay()
-  setTimeout(gameReady, 5000)
+})
+
+gameResettBtn.addEventListener('click', () => {
+	gameReady()
+	gameResettBtn.classList.remove('visible')
+	gameStartBtn.classList.remove('invisible')
 })
